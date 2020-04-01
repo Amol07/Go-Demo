@@ -15,6 +15,10 @@
 		3C088E7C2435509800586B7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C088E7A2435509800586B7D /* LaunchScreen.storyboard */; };
 		3C088E872435509800586B7D /* Gojek_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088E862435509800586B7D /* Gojek_DemoTests.swift */; };
 		3C088E922435509900586B7D /* Gojek_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088E912435509900586B7D /* Gojek_DemoUITests.swift */; };
+		3C088EA3243551D100586B7D /* Reachablity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EA2243551D100586B7D /* Reachablity.swift */; };
+		3C088EA52435520C00586B7D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EA42435520C00586B7D /* APIClient.swift */; };
+		3C088EA72435524700586B7D /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EA62435524700586B7D /* CustomError.swift */; };
+		3C088EAA243552D700586B7D /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EA9243552D700586B7D /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		3C088E8D2435509900586B7D /* Gojek DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gojek DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C088E912435509900586B7D /* Gojek_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gojek_DemoUITests.swift; sourceTree = "<group>"; };
 		3C088E932435509900586B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C088EA2243551D100586B7D /* Reachablity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachablity.swift; sourceTree = "<group>"; };
+		3C088EA42435520C00586B7D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		3C088EA62435524700586B7D /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		3C088EA9243552D700586B7D /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		3C088E6E2435509300586B7D /* Gojek Demo */ = {
 			isa = PBXGroup;
 			children = (
+				3C088E9F2435516700586B7D /* Reusable Components */,
 				3C088E6F2435509300586B7D /* AppDelegate.swift */,
 				3C088E712435509300586B7D /* SceneDelegate.swift */,
 				3C088E732435509300586B7D /* ViewController.swift */,
@@ -126,6 +135,41 @@
 				3C088E932435509900586B7D /* Info.plist */,
 			);
 			path = "Gojek DemoUITests";
+			sourceTree = "<group>";
+		};
+		3C088E9F2435516700586B7D /* Reusable Components */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EA8243552C500586B7D /* Extensions */,
+				3C088EA12435518100586B7D /* Custom Error */,
+				3C088EA02435517300586B7D /* Service */,
+			);
+			path = "Reusable Components";
+			sourceTree = "<group>";
+		};
+		3C088EA02435517300586B7D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EA2243551D100586B7D /* Reachablity.swift */,
+				3C088EA42435520C00586B7D /* APIClient.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3C088EA12435518100586B7D /* Custom Error */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EA62435524700586B7D /* CustomError.swift */,
+			);
+			path = "Custom Error";
+			sourceTree = "<group>";
+		};
+		3C088EA8243552C500586B7D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EA9243552D700586B7D /* UIView+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C088EA3243551D100586B7D /* Reachablity.swift in Sources */,
 				3C088E742435509300586B7D /* ViewController.swift in Sources */,
 				3C088E702435509300586B7D /* AppDelegate.swift in Sources */,
+				3C088EA52435520C00586B7D /* APIClient.swift in Sources */,
+				3C088EAA243552D700586B7D /* UIView+Ext.swift in Sources */,
 				3C088E722435509300586B7D /* SceneDelegate.swift in Sources */,
+				3C088EA72435524700586B7D /* CustomError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
