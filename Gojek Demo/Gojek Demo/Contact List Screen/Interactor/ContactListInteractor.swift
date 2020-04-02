@@ -8,6 +8,25 @@
 
 import Foundation
 
-class ContactListInteractor {
+class ContactListInteractor: ContactListInteractorInputProtocol {
+    weak var presenter: ContactListInteractorOutputProtocol?
+    var remoteDataFetcher: ContactListRemoteDataFetcherInputProtocol?
     
+    func retrieveContactList() {
+        self.remoteDataFetcher?.retrieveContactList()
+    }
+    
+    deinit {
+        print("deinit \(String(describing: self))")
+    }
+}
+
+extension ContactListInteractor: ContactListRemoteDataFetcherOutputProtocol {
+    func onContactsRetrieved(_ contacts: [Contact]) {
+        self.presenter?.didRetrieveContacts(contacts)
+    }
+    
+    func onError(_ error: CustomError?) {
+        self.presenter?.onError(error)
+    }
 }

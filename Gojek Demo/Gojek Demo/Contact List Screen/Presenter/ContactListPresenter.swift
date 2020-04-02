@@ -8,6 +8,26 @@
 
 import Foundation
 
-class ContactListPresenter {
+class ContactListPresenter: ContactListPresenterProtocol {
+    weak var view: ContactListViewProtocol?
+    var interactor: ContactListInteractorInputProtocol?
+    var router: ContactListRouterProtocol?
+        
+    func viewDidLoad() {
+        self.interactor?.retrieveContactList()
+    }
     
+    deinit {
+        print("deinit \(String(describing: self))")
+    }
+}
+
+extension ContactListPresenter: ContactListInteractorOutputProtocol {
+    func didRetrieveContacts(_ contacts: [Contact]) {
+        self.view?.loadComplete()
+    }
+    
+    func onError(_ error: CustomError?) {
+        self.view?.showError(error)
+    }
 }

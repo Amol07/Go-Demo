@@ -6,4 +6,52 @@
 //  Copyright © 2020 Amol Prakash. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol ContactListViewProtocol: class {
+    var presenter: ContactListPresenterProtocol? { get set }
+    // PRESENTER -> VIEW
+    func loadComplete()
+    func showError(_ error: CustomError?)
+    func showLoading()
+    func hideLoading()
+}
+
+protocol ContactListRouterProtocol: class {
+    static func createContactListModule() -> UIViewController
+    // PRESENTER -> ROUTER
+}
+
+protocol ContactListPresenterProtocol: class {
+    var view: ContactListViewProtocol? { get set }
+    var interactor: ContactListInteractorInputProtocol? { get set }
+    var router: ContactListRouterProtocol? { get set }
+        
+    // VIEW -> PRESENTER
+    func viewDidLoad()
+}
+
+protocol ContactListInteractorOutputProtocol: class {
+    // INTERACTOR -> PRESENTER
+    func didRetrieveContacts(_ contacts: [Contact])
+    func onError(_ error: CustomError?)
+}
+
+protocol ContactListInteractorInputProtocol: class {
+    var presenter: ContactListInteractorOutputProtocol? { get set }
+    var remoteDataFetcher: ContactListRemoteDataFetcherInputProtocol? { get set }
+    // PRESENTER -> INTERACTOR
+    func retrieveContactList()
+}
+
+protocol ContactListRemoteDataFetcherInputProtocol: class {
+    var interactor: ContactListRemoteDataFetcherOutputProtocol? { get set }
+    // INTERACTOR -> REMOTEDATAMANAGER
+    func retrieveContactList()
+}
+
+protocol ContactListRemoteDataFetcherOutputProtocol: class {
+    // REMOTEDATAMANAGER -> INTERACTOR
+    func onContactsRetrieved(_ contacts: [Contact])
+    func onError(_ error: CustomError?)
+}
