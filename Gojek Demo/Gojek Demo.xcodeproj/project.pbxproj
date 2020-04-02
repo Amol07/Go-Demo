@@ -137,8 +137,8 @@
 		3C088E6E2435509300586B7D /* Gojek Demo */ = {
 			isa = PBXGroup;
 			children = (
-				3C088EC824368AFC00586B7D /* Contact Details Screen */,
 				3C088E9F2435516700586B7D /* Reusable Components */,
+				3C088EC824368AFC00586B7D /* Contact Details Screen */,
 				3C088EAB24355F2E00586B7D /* Contact List Screen */,
 				3C088E6F2435509300586B7D /* AppDelegate.swift */,
 				3C088E712435509300586B7D /* SceneDelegate.swift */,
@@ -287,12 +287,12 @@
 		3C088EC824368AFC00586B7D /* Contact Details Screen */ = {
 			isa = PBXGroup;
 			children = (
-				3C088ECE24368B7800586B7D /* Protocols */,
-				3C088ECD24368B6800586B7D /* Remote Fetcher */,
-				3C088ECC24368B6100586B7D /* Router */,
+				3C088EC924368B4900586B7D /* View */,
 				3C088ECB24368B5900586B7D /* Presenter */,
 				3C088ECA24368B5000586B7D /* Interactor */,
-				3C088EC924368B4900586B7D /* View */,
+				3C088ECD24368B6800586B7D /* Remote Fetcher */,
+				3C088ECC24368B6100586B7D /* Router */,
+				3C088ECE24368B7800586B7D /* Protocols */,
 			);
 			path = "Contact Details Screen";
 			sourceTree = "<group>";

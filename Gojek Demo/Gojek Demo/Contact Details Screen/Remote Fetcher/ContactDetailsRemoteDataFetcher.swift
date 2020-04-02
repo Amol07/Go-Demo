@@ -8,6 +8,10 @@
 
 import Foundation
 
-class ContactDetailsRemoteDataFetcher {
+class ContactDetailsRemoteDataFetcher: ContactDetailsRemoteDataFetcherInputProtocol {
+    weak var interactor: ContactDetailsRemoteDataFetcherOutputProtocol?
     
+    func markFavourite(contact: Contact) {
+        
+    }
 }

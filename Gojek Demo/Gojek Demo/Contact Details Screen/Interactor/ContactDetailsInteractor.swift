@@ -8,6 +8,27 @@
 
 import Foundation
 
-class ContactDetailsInteractor {
+class ContactDetailsInteractor: ContactDetailsInteractorInputProtocol {
+    weak var presenter: ContactDetailsInteractorOutputProtocol?
+    var remoteDataFetcher: ContactDetailsRemoteDataFetcherInputProtocol?
+    var contact: Contact
     
+    init(contact: Contact) {
+        self.contact = contact
+    }
+    
+    func markFavourite() {
+        
+    }
+}
+
+extension ContactDetailsInteractor: ContactDetailsRemoteDataFetcherOutputProtocol {
+    
+    func markFavouriteSuccessful(contact: Contact) {
+
+    }
+    
+    func onError(_ error: CustomError?) {
+        
+    }
 }

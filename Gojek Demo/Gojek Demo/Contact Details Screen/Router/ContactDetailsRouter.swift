@@ -6,8 +6,15 @@
 //  Copyright © 2020 Amol Prakash. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-class ContactDetailsRouter {
+class ContactDetailsRouter: ContactDetailsRouterProtocol {
     
+    func present(viewController: UIViewController, from view: ContactDetailsViewProtocol?) {
+        
+    }
+    
+    func dismiss(controller: UIViewController) {
+        
+    }
 }

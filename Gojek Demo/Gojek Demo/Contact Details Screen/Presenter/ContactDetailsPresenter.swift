@@ -8,6 +8,43 @@
 
 import Foundation
 
-class ContactDetailsPresenter {
+class ContactDetailsPresenter: ContactDetailsPresenterProtocol {
+    weak var view: ContactDetailsViewProtocol?
+    var interactor: ContactDetailsInteractorInputProtocol?
+    var router: ContactDetailsRouterProtocol?
     
+    func viewDidLoad() {
+        
+    }
+    
+    func markFavourite() {
+        
+    }
+    
+    func makeCall() {
+        
+    }
+    
+    func sendMessage() {
+        
+    }
+    
+    func sendEmail() {
+        
+    }
+    
+    func editContact() {
+        
+    }
+}
+
+extension ContactDetailsPresenter: ContactDetailsInteractorOutputProtocol {
+    
+    func contactMarked(isFavourite: Bool) {
+        
+    }
+    
+    func onError(_ error: CustomError?) {
+        
+    }
 }
