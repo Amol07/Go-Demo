@@ -18,7 +18,7 @@ enum Endpoints {
         case fetch
         public var path: String {
             switch self {
-            case .fetch: return "contacts.json"
+            case .fetch: return "/contacts.json"
             }
         }
         

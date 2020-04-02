@@ -7,22 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Contacts List View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ContactsListViewController" customModule="Gojek_Demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ETP-Cz-r8E"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="791" y="-21"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="94g-Dd-nx6">
             <objects>
@@ -40,12 +24,116 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uMX-6B-3Uz"/>
+                        <segue destination="tzd-AA-FLD" kind="relationship" relationship="rootViewController" id="cFV-Si-Au5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mug-gm-Y8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="-21.428571428571427"/>
         </scene>
+        <!--Contacts-->
+        <scene sceneID="hPt-Ae-4VK">
+            <objects>
+                <viewController storyboardIdentifier="ContactsListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tzd-AA-FLD" customClass="ContactsListViewController" customModule="Gojek_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yda-YT-I28">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="COQ-xX-Wp3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactsTableViewCell" rowHeight="64" id="ydt-wI-ECQ" customClass="ContactsTableViewCell" customModule="Gojek_Contacts_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="64"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ydt-wI-ECQ" id="5yq-CC-aX4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="40" image="placeholder_photo" translatesAutoresizingMaskIntoConstraints="NO" id="KZ3-Oa-E6A" customClass="AyncImageView" customModule="Gojek_Demo" customModuleProvider="target">
+                                                    <rect key="frame" x="16" y="12" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="IY4-q7-NAV"/>
+                                                        <constraint firstAttribute="height" constant="40" id="vQh-8l-oAP"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywF-AU-WVm">
+                                                    <rect key="frame" x="72" y="21.5" width="87.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_favourite" translatesAutoresizingMaskIntoConstraints="NO" id="E0b-b6-MvP">
+                                                    <rect key="frame" x="363" y="23" width="19" height="18"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ywF-AU-WVm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5yq-CC-aX4" secondAttribute="top" constant="12" id="3rd-1Y-nEi"/>
+                                                <constraint firstItem="KZ3-Oa-E6A" firstAttribute="top" secondItem="5yq-CC-aX4" secondAttribute="top" constant="12" id="4MB-qs-EXU"/>
+                                                <constraint firstItem="E0b-b6-MvP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ywF-AU-WVm" secondAttribute="trailing" constant="16" id="6uL-6J-gDk"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KZ3-Oa-E6A" secondAttribute="bottom" constant="12" id="DGH-Yv-RcB"/>
+                                                <constraint firstItem="E0b-b6-MvP" firstAttribute="centerY" secondItem="KZ3-Oa-E6A" secondAttribute="centerY" id="GXE-Je-RtO"/>
+                                                <constraint firstItem="ywF-AU-WVm" firstAttribute="centerY" secondItem="KZ3-Oa-E6A" secondAttribute="centerY" priority="750" id="K1k-R4-U0Q"/>
+                                                <constraint firstItem="ywF-AU-WVm" firstAttribute="leading" secondItem="KZ3-Oa-E6A" secondAttribute="trailing" constant="16" id="WAY-EO-dbf"/>
+                                                <constraint firstAttribute="trailing" secondItem="E0b-b6-MvP" secondAttribute="trailing" constant="32" id="arD-vt-UBw"/>
+                                                <constraint firstAttribute="bottom" secondItem="ywF-AU-WVm" secondAttribute="bottom" constant="21.5" id="daP-ae-VzF"/>
+                                                <constraint firstAttribute="bottom" secondItem="ywF-AU-WVm" secondAttribute="bottom" constant="24" id="jfZ-ZP-Fio"/>
+                                                <constraint firstItem="KZ3-Oa-E6A" firstAttribute="leading" secondItem="5yq-CC-aX4" secondAttribute="leading" constant="16" id="pNH-ZU-8ts"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="jfZ-ZP-Fio"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favImageView" destination="E0b-b6-MvP" id="173-oS-v2W"/>
+                                            <outlet property="nameLabel" destination="ywF-AU-WVm" id="k1z-FH-cqn"/>
+                                            <outlet property="profileImageView" destination="KZ3-Oa-E6A" id="RQU-Nx-ttE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tzd-AA-FLD" id="WOW-iB-pib"/>
+                                    <outlet property="delegate" destination="tzd-AA-FLD" id="oIr-8p-QVy"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="W4Z-Jj-717">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.31565719840000001" green="0.8916056752" blue="0.76077669859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UuV-Ij-Ch0" firstAttribute="trailing" secondItem="COQ-xX-Wp3" secondAttribute="trailing" id="13N-Mw-Du7"/>
+                            <constraint firstItem="UuV-Ij-Ch0" firstAttribute="bottom" secondItem="COQ-xX-Wp3" secondAttribute="bottom" id="Nzc-xB-2fU"/>
+                            <constraint firstItem="W4Z-Jj-717" firstAttribute="centerX" secondItem="Yda-YT-I28" secondAttribute="centerX" id="cre-wb-QHz"/>
+                            <constraint firstItem="COQ-xX-Wp3" firstAttribute="leading" secondItem="UuV-Ij-Ch0" secondAttribute="leading" id="cwY-R2-Y7Y"/>
+                            <constraint firstItem="COQ-xX-Wp3" firstAttribute="top" secondItem="UuV-Ij-Ch0" secondAttribute="top" id="d1k-lQ-UzB"/>
+                            <constraint firstItem="W4Z-Jj-717" firstAttribute="centerY" secondItem="Yda-YT-I28" secondAttribute="centerY" id="gHG-ht-HvC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UuV-Ij-Ch0"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="T6r-mo-zy5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TGc-BU-40G">
+                            <color key="tintColor" red="0.31565719840000001" green="0.8916056752" blue="0.76077669859999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addContact:" destination="tzd-AA-FLD" id="4et-rk-oPV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="W4Z-Jj-717" id="VM9-lH-n02"/>
+                        <outlet property="tableView" destination="COQ-xX-Wp3" id="cf9-7p-YQQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JpS-jd-OMw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.86956521739137" y="-21.428571428571427"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="home_favourite" width="19" height="18"/>
+        <image name="placeholder_photo" width="126" height="126"/>
+    </resources>
 </document>

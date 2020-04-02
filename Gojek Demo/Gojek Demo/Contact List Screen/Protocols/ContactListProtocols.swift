@@ -26,9 +26,18 @@ protocol ContactListPresenterProtocol: class {
     var view: ContactListViewProtocol? { get set }
     var interactor: ContactListInteractorInputProtocol? { get set }
     var router: ContactListRouterProtocol? { get set }
-        
+    
+    var letterIndexArray: [String] { get set }
+    
     // VIEW -> PRESENTER
     func viewDidLoad()
+    func addContact()
+    func titleForHeader(in section: Int) -> String
+    func sectionIndexTitles() -> [String]
+    func numberOfRows(inSection section: Int) -> Int
+    func numberOfSection() -> Int
+    func contactAt(indexPath: IndexPath) -> Contact
+    func selectedRowAt(indexPath: IndexPath)
 }
 
 protocol ContactListInteractorOutputProtocol: class {

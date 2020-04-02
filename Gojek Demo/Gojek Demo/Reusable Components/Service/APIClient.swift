@@ -81,5 +81,5 @@ enum ContentType {
 }
 
 enum EnvironmentURL {
-    static let baseUrl = "http://gojek-contacts-app.herokuapp.com/"
+    static let baseUrl = "http://gojek-contacts-app.herokuapp.com"
 }

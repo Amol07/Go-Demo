@@ -26,6 +26,8 @@
 		3C088EBD2435635900586B7D /* ContactListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EBC2435635900586B7D /* ContactListRouter.swift */; };
 		3C088EC02435667C00586B7D /* ContactListRemoteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EBF2435667C00586B7D /* ContactListRemoteDataFetcher.swift */; };
 		3C088EC224356DCC00586B7D /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EC124356DCC00586B7D /* EndPoints.swift */; };
+		3C088EC4243573AF00586B7D /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EC3243573AF00586B7D /* ContactsTableViewCell.swift */; };
+		3C088EC62435828D00586B7D /* AyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EC52435828D00586B7D /* AyncImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		3C088EBC2435635900586B7D /* ContactListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListRouter.swift; sourceTree = "<group>"; };
 		3C088EBF2435667C00586B7D /* ContactListRemoteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListRemoteDataFetcher.swift; sourceTree = "<group>"; };
 		3C088EC124356DCC00586B7D /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		3C088EC3243573AF00586B7D /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		3C088EC52435828D00586B7D /* AyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyncImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 		3C088E9F2435516700586B7D /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
+				3C088EC7243582A500586B7D /* AsyncImageView */,
 				3C088EA8243552C500586B7D /* Extensions */,
 				3C088EA12435518100586B7D /* Custom Error */,
 				3C088EA02435517300586B7D /* Service */,
@@ -205,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				3C088EB62435631D00586B7D /* ContactListViewController.swift */,
+				3C088EC3243573AF00586B7D /* ContactsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,6 +261,14 @@
 				3C088EBF2435667C00586B7D /* ContactListRemoteDataFetcher.swift */,
 			);
 			path = "Remote Fetcher";
+			sourceTree = "<group>";
+		};
+		3C088EC7243582A500586B7D /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EC52435828D00586B7D /* AyncImageView.swift */,
+			);
+			path = AsyncImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,11 +407,13 @@
 				3C088EA3243551D100586B7D /* Reachablity.swift in Sources */,
 				3C088E702435509300586B7D /* AppDelegate.swift in Sources */,
 				3C088EB72435631D00586B7D /* ContactListViewController.swift in Sources */,
+				3C088EC62435828D00586B7D /* AyncImageView.swift in Sources */,
 				3C088EBD2435635900586B7D /* ContactListRouter.swift in Sources */,
 				3C088EA52435520C00586B7D /* APIClient.swift in Sources */,
 				3C088EAA243552D700586B7D /* UIView+Ext.swift in Sources */,
 				3C088E722435509300586B7D /* SceneDelegate.swift in Sources */,
 				3C088EBB2435634900586B7D /* ContactListInteractor.swift in Sources */,
+				3C088EC4243573AF00586B7D /* ContactsTableViewCell.swift in Sources */,
 				3C088EC224356DCC00586B7D /* EndPoints.swift in Sources */,
 				3C088EA72435524700586B7D /* CustomError.swift in Sources */,
 				3C088EC02435667C00586B7D /* ContactListRemoteDataFetcher.swift in Sources */,
