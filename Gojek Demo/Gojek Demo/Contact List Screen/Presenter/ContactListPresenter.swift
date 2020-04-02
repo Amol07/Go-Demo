@@ -20,7 +20,6 @@ class ContactListPresenter: ContactListPresenterProtocol {
     private var contacts = [Contact]()
         
     func viewDidLoad() {
-        self.view?.showLoading()
         self.interactor?.retrieveContactList()
     }
     

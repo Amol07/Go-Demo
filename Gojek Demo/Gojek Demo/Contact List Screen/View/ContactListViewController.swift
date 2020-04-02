@@ -14,10 +14,19 @@ class ContactsListViewController: UIViewController {
     
     var presenter: ContactListPresenterProtocol?
     
+    lazy private var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        refreshControl.tintColor = UIColor(red: 80.0/255.0, green: 227.0/255.0, blue: 194.0/255.0, alpha: 1.0)
+        refreshControl.addTarget(self, action: #selector(self.refreshControlValueChanged), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showLoading()
         self.presenter?.viewDidLoad()
         self.tableView.tableFooterView = UIView()
+        self.tableView.addSubview(self.refreshControl)
     }
     
     @IBAction func addContact(_ sender: Any) {
@@ -48,6 +57,7 @@ extension ContactsListViewController: ContactListViewProtocol {
     
     func hideLoading() {
         // Remove spinner
+        self.refreshControl.endRefreshing()
         self.activityIndicatorView.stopAnimating()
     }
 }
@@ -86,5 +96,12 @@ extension ContactsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         self.presenter?.selectedRowAt(indexPath: indexPath)
+    }
+}
+
+extension ContactsListViewController {
+    
+    @objc func refreshControlValueChanged() {
+        self.presenter?.viewDidLoad()
     }
 }
