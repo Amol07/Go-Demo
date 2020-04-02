@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import MessageUI
 
-class ContactDetailsPresenter: ContactDetailsPresenterProtocol {
+class ContactDetailsPresenter: NSObject, ContactDetailsPresenterProtocol {
     weak var view: ContactDetailsViewProtocol?
     var interactor: ContactDetailsInteractorInputProtocol?
     var router: ContactDetailsRouterProtocol?
@@ -29,15 +30,43 @@ class ContactDetailsPresenter: ContactDetailsPresenterProtocol {
     }
     
     func makeCall() {
-        
+        guard let phoneNumber = self.interactor?.contact.phoneNumber, phoneNumber.isValidPhoneNumber else {
+            self.view?.showError(.invalidPhoneNo)
+            return
+        }
+        phoneNumber.makeACall()
     }
     
     func sendMessage() {
-        
+        guard let phoneNumber = self.interactor?.contact.phoneNumber, phoneNumber.isValidPhoneNumber else {
+            self.view?.showError(.invalidPhoneNo)
+            return
+        }
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = ""
+            controller.recipients = [phoneNumber]
+            controller.messageComposeDelegate = self
+            self.router?.present(viewController: controller, from: self.view)
+        } else {
+            
+        }
     }
     
     func sendEmail() {
-        
+        guard let email = self.interactor?.contact.email, email.isValidEmail() else {
+            self.view?.showError(.invalidEmail)
+            return
+        }
+        if MFMailComposeViewController.canSendMail() {
+            let mailVc = MFMailComposeViewController()
+            mailVc.setToRecipients([email])
+            mailVc.mailComposeDelegate = self
+            self.router?.present(viewController: mailVc, from: self.view)
+        } else {
+            // show failure alert
+            self.view?.showError(.mailConfigError)
+        }
     }
     
     func editContact() {
@@ -60,5 +89,17 @@ extension ContactDetailsPresenter: ContactDetailsInteractorOutputProtocol {
     func onError(_ error: CustomError?) {
         self.view?.hideLoading()
         self.view?.showError(error)
+    }
+}
+
+extension ContactDetailsPresenter: MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.router?.dismiss(controller: controller)
+    }
+}
+
+extension ContactDetailsPresenter: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        self.router?.dismiss(controller: controller)
     }
 }

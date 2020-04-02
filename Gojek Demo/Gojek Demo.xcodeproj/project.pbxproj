@@ -34,6 +34,7 @@
 		3C088ED624368BFB00586B7D /* ContactDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088ED524368BFB00586B7D /* ContactDetailsRouter.swift */; };
 		3C088ED824368C1400586B7D /* ContactDetailsRemoteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088ED724368C1400586B7D /* ContactDetailsRemoteDataFetcher.swift */; };
 		3C088EDA24368C3100586B7D /* ContactDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088ED924368C3100586B7D /* ContactDetailsProtocols.swift */; };
+		3C088EDC2436AA3E00586B7D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EDB2436AA3E00586B7D /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		3C088ED524368BFB00586B7D /* ContactDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsRouter.swift; sourceTree = "<group>"; };
 		3C088ED724368C1400586B7D /* ContactDetailsRemoteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsRemoteDataFetcher.swift; sourceTree = "<group>"; };
 		3C088ED924368C3100586B7D /* ContactDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsProtocols.swift; sourceTree = "<group>"; };
+		3C088EDB2436AA3E00586B7D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				3C088EA9243552D700586B7D /* UIView+Ext.swift */,
+				3C088EDB2436AA3E00586B7D /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				3C088EA3243551D100586B7D /* Reachablity.swift in Sources */,
 				3C088E702435509300586B7D /* AppDelegate.swift in Sources */,
 				3C088ED424368BEA00586B7D /* ContactDetailsPresenter.swift in Sources */,
+				3C088EDC2436AA3E00586B7D /* String+Ext.swift in Sources */,
 				3C088EDA24368C3100586B7D /* ContactDetailsProtocols.swift in Sources */,
 				3C088EB72435631D00586B7D /* ContactListViewController.swift in Sources */,
 				3C088EC62435828D00586B7D /* AyncImageView.swift in Sources */,

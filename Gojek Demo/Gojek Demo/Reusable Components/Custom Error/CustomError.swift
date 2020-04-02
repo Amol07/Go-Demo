@@ -15,6 +15,9 @@ enum CustomError: Error {
     case serverError
     case noInternet
     case unknown
+    case mailConfigError
+    case invalidPhoneNo
+    case invalidEmail
 }
 
 extension CustomError: LocalizedError {
@@ -29,6 +32,12 @@ extension CustomError: LocalizedError {
             return NSLocalizedString("Unable to create url request.", comment: "Invalid Request")
         case .noInternet:
             return NSLocalizedString("Please check your internet connetion.", comment: "No Internet")
+        case .mailConfigError:
+            return NSLocalizedString("Please configure your device for sending emails.", comment: "Mail Configuartion Error")
+        case .invalidPhoneNo:
+        return NSLocalizedString("Phone number is not valid.", comment: "Phone Error")
+        case .invalidEmail:
+        return NSLocalizedString("Email Id is not valid.", comment: "Email Error")
         }
     }
 }
