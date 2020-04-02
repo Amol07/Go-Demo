@@ -42,4 +42,8 @@ class AyncImageView: UIImageView {
             }
         }.resume()
     }
+    
+    deinit {
+        print("deinit \(String(describing: self))")
+    }
 }

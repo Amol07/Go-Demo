@@ -17,6 +17,9 @@ class Contact: Decodable {
     var contactDetailsUrlString: String?
     var isFavorite: Bool = false
     
+    var email: String?
+    var phoneNumber: String?
+    
     enum CodingKeys: String, CodingKey {
         case contactId = "id"
         case firstName = "first_name"
@@ -24,6 +27,8 @@ class Contact: Decodable {
         case profilePicUrlString = "profile_pic"
         case isFavorite = "favorite"
         case contactDetailsUrlString = "url"
+        case email
+        case phoneNumber = "phone_number"
     }
     
     deinit {

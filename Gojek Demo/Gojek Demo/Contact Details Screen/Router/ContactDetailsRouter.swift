@@ -17,4 +17,8 @@ class ContactDetailsRouter: ContactDetailsRouterProtocol {
     func dismiss(controller: UIViewController) {
         
     }
+    
+    deinit {
+        print("deinit \(String(describing: self))")
+    }
 }

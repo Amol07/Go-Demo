@@ -21,6 +21,23 @@ class ContactListRemoteDataFetcher: ContactListRemoteDataFetcherInputProtocol {
         }
     }
     
+    func getContactDetails(forContact contactRef: Contact) {
+        guard let contactId = contactRef.contactId else {
+            self.interactor?.onError(.badUrlRequest);
+            return
+        }
+        let url = Endpoints.Contacts.favourite("\(contactId)").url
+        APIClient<Contact>.clientRequest(with: url, params: nil, type: .get) { [weak self] contact, error in
+            guard let contact = contact else {
+                self?.interactor?.onError(error)
+                return
+            }
+            contactRef.email = contact.email
+            contactRef.phoneNumber = contact.phoneNumber
+            self?.interactor?.contactDetailsRetrieved(contact: contactRef)
+        }
+    }
+    
     deinit {
         print("deinit \(String(describing: self))")
     }

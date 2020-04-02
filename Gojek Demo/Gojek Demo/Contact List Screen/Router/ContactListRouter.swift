@@ -33,6 +33,30 @@ class ContactListRouter: ContactListRouterProtocol {
         return UIViewController()
     }
     
+    private static func createContactDetailModule(withContact contact: Contact, andDelegate delegate: ContactDetailsDelegate?) -> UIViewController {
+        guard let detailsVc = mainStoryboard.instantiateViewController(identifier: "ContactDetailsViewController") as? ContactDetailsViewController else { return UIViewController() }
+        let presenter: ContactDetailsPresenterProtocol & ContactDetailsInteractorOutputProtocol = ContactDetailsPresenter(delegate: delegate)
+        let interactor: ContactDetailsInteractorInputProtocol & ContactDetailsRemoteDataFetcherOutputProtocol = ContactDetailsInteractor(contact: contact)
+        let remoteDataFetcher: ContactDetailsRemoteDataFetcherInputProtocol = ContactDetailsRemoteDataFetcher()
+        let router: ContactDetailsRouterProtocol = ContactDetailsRouter()
+        
+        detailsVc.presenter = presenter
+        presenter.view = detailsVc
+        presenter.router = router
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        interactor.remoteDataFetcher = remoteDataFetcher
+        remoteDataFetcher.interactor = interactor
+        return detailsVc
+    }
+    
+    func showContactDetailScreen(from view: ContactListViewProtocol?, forContact contact: Contact, andDelegate delegate: ContactDetailsDelegate?) {
+        let detailVc = type(of: self).createContactDetailModule(withContact: contact, andDelegate: delegate)
+        if let view = view as? UIViewController {
+            view.navigationController?.pushViewController(detailVc, animated: true)
+        }
+    }
+    
     deinit {
         print("deinit \(String(describing: self))")
     }

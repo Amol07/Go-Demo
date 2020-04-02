@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ContactListViewProtocol: class {
+protocol ContactListViewProtocol: AnyObject {
     var presenter: ContactListPresenterProtocol? { get set }
     // PRESENTER -> VIEW
     func loadComplete()
@@ -17,12 +17,13 @@ protocol ContactListViewProtocol: class {
     func hideLoading()
 }
 
-protocol ContactListRouterProtocol: class {
-    static func createContactListModule() -> UIViewController
+protocol ContactListRouterProtocol: AnyObject {
     // PRESENTER -> ROUTER
+    static func createContactListModule() -> UIViewController
+    func showContactDetailScreen(from view: ContactListViewProtocol?, forContact contact: Contact, andDelegate delegate: ContactDetailsDelegate?)
 }
 
-protocol ContactListPresenterProtocol: class {
+protocol ContactListPresenterProtocol: AnyObject {
     var view: ContactListViewProtocol? { get set }
     var interactor: ContactListInteractorInputProtocol? { get set }
     var router: ContactListRouterProtocol? { get set }
@@ -40,27 +41,31 @@ protocol ContactListPresenterProtocol: class {
     func selectedRowAt(indexPath: IndexPath)
 }
 
-protocol ContactListInteractorOutputProtocol: class {
+protocol ContactListInteractorOutputProtocol: AnyObject {
     // INTERACTOR -> PRESENTER
     func didRetrieveContacts(_ contacts: [Contact])
+    func didContactDetailsRetrieved(contact: Contact)
     func onError(_ error: CustomError?)
 }
 
-protocol ContactListInteractorInputProtocol: class {
+protocol ContactListInteractorInputProtocol: AnyObject {
     var presenter: ContactListInteractorOutputProtocol? { get set }
     var remoteDataFetcher: ContactListRemoteDataFetcherInputProtocol? { get set }
     // PRESENTER -> INTERACTOR
     func retrieveContactList()
+    func getContactDetails(forContact contact: Contact)
 }
 
-protocol ContactListRemoteDataFetcherInputProtocol: class {
+protocol ContactListRemoteDataFetcherInputProtocol: AnyObject {
     var interactor: ContactListRemoteDataFetcherOutputProtocol? { get set }
     // INTERACTOR -> REMOTEDATAMANAGER
     func retrieveContactList()
+    func getContactDetails(forContact contact: Contact)
 }
 
-protocol ContactListRemoteDataFetcherOutputProtocol: class {
+protocol ContactListRemoteDataFetcherOutputProtocol: AnyObject {
     // REMOTEDATAMANAGER -> INTERACTOR
     func onContactsRetrieved(_ contacts: [Contact])
+    func contactDetailsRetrieved(contact: Contact)
     func onError(_ error: CustomError?)
 }

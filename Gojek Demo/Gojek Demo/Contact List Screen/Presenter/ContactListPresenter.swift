@@ -60,6 +60,8 @@ class ContactListPresenter: ContactListPresenterProtocol {
     }
     
     func selectedRowAt(indexPath: IndexPath) {
+        self.view?.showLoading()
+        self.interactor?.getContactDetails(forContact: self.contactAt(indexPath: indexPath))
     }
     
     func addContact() {
@@ -80,9 +82,21 @@ extension ContactListPresenter: ContactListInteractorOutputProtocol {
         self.view?.loadComplete()
     }
     
+    func didContactDetailsRetrieved(contact: Contact) {
+        self.view?.hideLoading()
+        self.router?.showContactDetailScreen(from: self.view, forContact: contact, andDelegate: self)
+    }
+    
     func onError(_ error: CustomError?) {
         self.view?.hideLoading()
         self.view?.showError(error)
+    }
+}
+
+extension ContactListPresenter: ContactDetailsDelegate {
+    
+    func contactMarkedFavourite() {
+        self.view?.loadComplete()
     }
 }
 

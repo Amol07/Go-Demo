@@ -18,17 +18,23 @@ class ContactDetailsInteractor: ContactDetailsInteractorInputProtocol {
     }
     
     func markFavourite() {
-        
+        self.contact.isFavorite.toggle()
+        self.remoteDataFetcher?.markFavourite(contact: self.contact)
+    }
+    
+    deinit {
+        print("deinit \(String(describing: self))")
     }
 }
 
 extension ContactDetailsInteractor: ContactDetailsRemoteDataFetcherOutputProtocol {
     
     func markFavouriteSuccessful(contact: Contact) {
-
+        self.contact = contact
+        self.presenter?.contactMarked(isFavourite: contact.isFavorite)
     }
     
     func onError(_ error: CustomError?) {
-        
+        self.presenter?.onError(error)
     }
 }

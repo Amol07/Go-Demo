@@ -18,6 +18,11 @@ protocol ContactDetailsViewProtocol: AnyObject {
     func hideLoading()
 }
 
+// Presenter to presenter communication
+protocol ContactDetailsDelegate: AnyObject {
+    func contactMarkedFavourite()
+}
+
 protocol ContactDetailsPresenterProtocol: AnyObject {
     var view: ContactDetailsViewProtocol? { get set }
     var interactor: ContactDetailsInteractorInputProtocol? { get set }
