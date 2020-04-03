@@ -35,6 +35,11 @@
 		3C088ED824368C1400586B7D /* ContactDetailsRemoteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088ED724368C1400586B7D /* ContactDetailsRemoteDataFetcher.swift */; };
 		3C088EDA24368C3100586B7D /* ContactDetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088ED924368C3100586B7D /* ContactDetailsProtocols.swift */; };
 		3C088EDC2436AA3E00586B7D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EDB2436AA3E00586B7D /* String+Ext.swift */; };
+		3C088EE52436B8C100586B7D /* ContactEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EE42436B8C100586B7D /* ContactEditViewController.swift */; };
+		3C088EE72436B8F100586B7D /* ContactEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EE62436B8F100586B7D /* ContactEditPresenter.swift */; };
+		3C088EE92436B90000586B7D /* ContactEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EE82436B90000586B7D /* ContactEditInteractor.swift */; };
+		3C088EEB2436B91900586B7D /* ContactEditRemoteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EEA2436B91900586B7D /* ContactEditRemoteDataFetcher.swift */; };
+		3C088EED2436B93600586B7D /* ContactEditProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EEC2436B93600586B7D /* ContactEditProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,11 @@
 		3C088ED724368C1400586B7D /* ContactDetailsRemoteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsRemoteDataFetcher.swift; sourceTree = "<group>"; };
 		3C088ED924368C3100586B7D /* ContactDetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsProtocols.swift; sourceTree = "<group>"; };
 		3C088EDB2436AA3E00586B7D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		3C088EE42436B8C100586B7D /* ContactEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditViewController.swift; sourceTree = "<group>"; };
+		3C088EE62436B8F100586B7D /* ContactEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditPresenter.swift; sourceTree = "<group>"; };
+		3C088EE82436B90000586B7D /* ContactEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditInteractor.swift; sourceTree = "<group>"; };
+		3C088EEA2436B91900586B7D /* ContactEditRemoteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditRemoteDataFetcher.swift; sourceTree = "<group>"; };
+		3C088EEC2436B93600586B7D /* ContactEditProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				3C088E9F2435516700586B7D /* Reusable Components */,
-				3C088EC824368AFC00586B7D /* Contact Details Screen */,
 				3C088EAB24355F2E00586B7D /* Contact List Screen */,
+				3C088EC824368AFC00586B7D /* Contact Details Screen */,
+				3C088EDD2436B85000586B7D /* Contact Edit Screen */,
 				3C088E6F2435509300586B7D /* AppDelegate.swift */,
 				3C088E712435509300586B7D /* SceneDelegate.swift */,
 				3C088E752435509300586B7D /* Main.storyboard */,
@@ -348,6 +359,66 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		3C088EDD2436B85000586B7D /* Contact Edit Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EE32436B8A400586B7D /* View */,
+				3C088EE22436B88100586B7D /* Presenter */,
+				3C088EE12436B87F00586B7D /* Interactor */,
+				3C088EE02436B87C00586B7D /* Remote Fetcher */,
+				3C088EDF2436B87300586B7D /* Router */,
+				3C088EDE2436B86700586B7D /* Protocols */,
+			);
+			path = "Contact Edit Screen";
+			sourceTree = "<group>";
+		};
+		3C088EDE2436B86700586B7D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EEC2436B93600586B7D /* ContactEditProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3C088EDF2436B87300586B7D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3C088EE02436B87C00586B7D /* Remote Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EEA2436B91900586B7D /* ContactEditRemoteDataFetcher.swift */,
+			);
+			path = "Remote Fetcher";
+			sourceTree = "<group>";
+		};
+		3C088EE12436B87F00586B7D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EE82436B90000586B7D /* ContactEditInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3C088EE22436B88100586B7D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EE62436B8F100586B7D /* ContactEditPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3C088EE32436B8A400586B7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EE42436B8C100586B7D /* ContactEditViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -486,12 +557,17 @@
 				3C088EA3243551D100586B7D /* Reachablity.swift in Sources */,
 				3C088E702435509300586B7D /* AppDelegate.swift in Sources */,
 				3C088ED424368BEA00586B7D /* ContactDetailsPresenter.swift in Sources */,
+				3C088EE72436B8F100586B7D /* ContactEditPresenter.swift in Sources */,
 				3C088EDC2436AA3E00586B7D /* String+Ext.swift in Sources */,
 				3C088EDA24368C3100586B7D /* ContactDetailsProtocols.swift in Sources */,
 				3C088EB72435631D00586B7D /* ContactListViewController.swift in Sources */,
+				3C088EE92436B90000586B7D /* ContactEditInteractor.swift in Sources */,
+				3C088EED2436B93600586B7D /* ContactEditProtocols.swift in Sources */,
 				3C088EC62435828D00586B7D /* AyncImageView.swift in Sources */,
+				3C088EEB2436B91900586B7D /* ContactEditRemoteDataFetcher.swift in Sources */,
 				3C088ED224368BDA00586B7D /* ContactDetailsInteractor.swift in Sources */,
 				3C088EBD2435635900586B7D /* ContactListRouter.swift in Sources */,
+				3C088EE52436B8C100586B7D /* ContactEditViewController.swift in Sources */,
 				3C088EA52435520C00586B7D /* APIClient.swift in Sources */,
 				3C088EAA243552D700586B7D /* UIView+Ext.swift in Sources */,
 				3C088ED024368B9B00586B7D /* ContactDetailsViewController.swift in Sources */,
