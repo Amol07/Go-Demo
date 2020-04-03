@@ -366,7 +366,6 @@
 				3C088EE22436B88100586B7D /* Presenter */,
 				3C088EE12436B87F00586B7D /* Interactor */,
 				3C088EE02436B87C00586B7D /* Remote Fetcher */,
-				3C088EDF2436B87300586B7D /* Router */,
 				3C088EDE2436B86700586B7D /* Protocols */,
 			);
 			path = "Contact Edit Screen";
@@ -378,13 +377,6 @@
 				3C088EEC2436B93600586B7D /* ContactEditProtocols.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		3C088EDF2436B87300586B7D /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		3C088EE02436B87C00586B7D /* Remote Fetcher */ = {

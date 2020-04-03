@@ -30,6 +30,7 @@ class ContactsListViewController: UIViewController {
     }
     
     @IBAction func addContact(_ sender: Any) {
+        self.presenter?.addContact()
     }
     
     deinit {

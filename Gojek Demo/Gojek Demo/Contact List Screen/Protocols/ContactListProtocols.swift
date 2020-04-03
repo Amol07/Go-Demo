@@ -21,6 +21,7 @@ protocol ContactListRouterProtocol: AnyObject {
     // PRESENTER -> ROUTER
     static func createContactListModule() -> UIViewController
     func showContactDetailScreen(from view: ContactListViewProtocol?, forContact contact: Contact, andDelegate delegate: ContactDetailsDelegate?)
+    func presentContactAddScreen(from view: ContactListViewProtocol?, forContact contact: Contact, andDelegate delegate: ContactEditDelegate?)
 }
 
 protocol ContactListPresenterProtocol: AnyObject {

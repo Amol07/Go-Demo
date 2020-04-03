@@ -16,17 +16,19 @@ enum Endpoints {
     
     enum Contacts: Endpoint {
         case fetch
+        case add
+        case edit(String)
         case favourite(String)
         public var path: String {
             switch self {
-            case .fetch: return "/contacts.json"
-            case .favourite(let contactId): return "/contacts/\(contactId).json"
+            case .fetch, .add: return "/contacts.json"
+            case .edit(let contactId), .favourite(let contactId): return "/contacts/\(contactId).json"
             }
         }
         
         public var url: String {
             switch self {
-            case .fetch, .favourite(_): return "\(EnvironmentURL.baseUrl)\(path)"
+            case .fetch, .add, .favourite(_), .edit(_): return "\(EnvironmentURL.baseUrl)\(path)"
             }
         }
     }

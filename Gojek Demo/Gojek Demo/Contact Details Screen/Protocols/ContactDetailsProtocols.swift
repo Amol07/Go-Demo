@@ -20,6 +20,7 @@ protocol ContactDetailsViewProtocol: AnyObject {
 
 // Presenter to presenter communication
 protocol ContactDetailsDelegate: AnyObject {
+    func contactInfoDidChange(isSortingRequired: Bool)
     func contactMarkedFavourite()
 }
 
@@ -39,6 +40,7 @@ protocol ContactDetailsPresenterProtocol: AnyObject {
 
 protocol ContactDetailsRouterProtocol: AnyObject {
     // PRESENTER -> ROUTER
+    func presentContactEditScreen(from view: ContactDetailsViewProtocol?, forContact contact: Contact, andDelegate delegate: ContactEditDelegate?)
     func present(viewController: UIViewController, from view: ContactDetailsViewProtocol?)
     func dismiss(controller: UIViewController)
 }

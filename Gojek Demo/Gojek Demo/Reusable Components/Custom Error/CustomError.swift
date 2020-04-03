@@ -18,6 +18,9 @@ enum CustomError: Error {
     case mailConfigError
     case invalidPhoneNo
     case invalidEmail
+    case invalidContact
+    case invalidFirstName
+    case invalidLastName
 }
 
 extension CustomError: LocalizedError {
@@ -38,6 +41,12 @@ extension CustomError: LocalizedError {
         return NSLocalizedString("Phone number is not valid.", comment: "Phone Error")
         case .invalidEmail:
         return NSLocalizedString("Email Id is not valid.", comment: "Email Error")
+        case .invalidContact:
+        return NSLocalizedString("Unable to process your request due to invalid contact.", comment: "Error")
+        case .invalidFirstName:
+        return NSLocalizedString("First name cannot be left blank.", comment: "Error")
+        case .invalidLastName:
+        return NSLocalizedString("Last name cannot be left blank.", comment: "Error")
         }
     }
 }

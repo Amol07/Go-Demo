@@ -8,6 +8,16 @@
 
 import Foundation
 
+enum ApiConstants {
+    static let firstName = "first_name"
+    static let lastName = "last_name"
+    static let profilePic = "profile_pic"
+    static let isFavorite = "favorite"
+    static let contactId = "id"
+    static let phoneNumber = "phone_number"
+    static let email = "email"
+}
+
 class Contact: Decodable {
     
     var contactId: Int?
@@ -19,6 +29,8 @@ class Contact: Decodable {
     
     var email: String?
     var phoneNumber: String?
+    
+    var imageData: Data?
     
     enum CodingKeys: String, CodingKey {
         case contactId = "id"
@@ -33,5 +45,21 @@ class Contact: Decodable {
     
     deinit {
         print("deinit \(String(describing: self))")
+    }
+}
+
+extension Contact: NSCopying {
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copy = Contact()
+        copy.contactId = self.contactId
+        copy.firstName = self.firstName
+        copy.lastName = self.lastName
+        copy.phoneNumber = self.phoneNumber
+        copy.email = self.email
+        copy.isFavorite = self.isFavorite
+        copy.profilePicUrlString = self.profilePicUrlString
+        copy.contactDetailsUrlString = self.contactDetailsUrlString
+        copy.imageData = self.imageData
+        return copy
     }
 }

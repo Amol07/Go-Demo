@@ -70,11 +70,20 @@ class ContactDetailsPresenter: NSObject, ContactDetailsPresenterProtocol {
     }
     
     func editContact() {
-        
+        guard let contact = self.interactor?.contact else { return }
+        self.router?.presentContactEditScreen(from: self.view, forContact: contact, andDelegate: self)
     }
     
     deinit {
         print("deinit \(String(describing: self))")
+    }
+}
+
+extension ContactDetailsPresenter: ContactEditDelegate {
+    
+    func didEditedSuccessfully() {
+        self.view?.contact = self.interactor?.contact
+        self.delegate?.contactInfoDidChange(isSortingRequired: true)
     }
 }
 

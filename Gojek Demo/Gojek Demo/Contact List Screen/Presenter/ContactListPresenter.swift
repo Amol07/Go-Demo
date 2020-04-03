@@ -65,6 +65,7 @@ class ContactListPresenter: ContactListPresenterProtocol {
     }
     
     func addContact() {
+        self.router?.presentContactAddScreen(from: self.view, forContact: Contact(), andDelegate: self)
     }
     
     deinit {
@@ -93,7 +94,19 @@ extension ContactListPresenter: ContactListInteractorOutputProtocol {
     }
 }
 
+extension ContactListPresenter: ContactEditDelegate {
+    
+    func didAdded(contact: Contact) {
+        self.contacts.append(contact)
+        self.didRetrieveContacts(self.contacts)
+    }
+}
+
 extension ContactListPresenter: ContactDetailsDelegate {
+    
+    func contactInfoDidChange(isSortingRequired: Bool) {
+        isSortingRequired ? self.didRetrieveContacts(self.contacts) : self.view?.loadComplete()
+    }
     
     func contactMarkedFavourite() {
         self.view?.loadComplete()

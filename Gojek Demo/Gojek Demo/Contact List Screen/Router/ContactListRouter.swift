@@ -13,6 +13,7 @@ var mainStoryboard: UIStoryboard {
 }
 
 class ContactListRouter: ContactListRouterProtocol {
+    
     static func createContactListModule() -> UIViewController {
         let navController = mainStoryboard.instantiateViewController(withIdentifier: "ContactsNavigationController")
         if let view = navController.children.first as? ContactsListViewController {
@@ -54,6 +55,13 @@ class ContactListRouter: ContactListRouterProtocol {
         let detailVc = type(of: self).createContactDetailModule(withContact: contact, andDelegate: delegate)
         if let view = view as? UIViewController {
             view.navigationController?.pushViewController(detailVc, animated: true)
+        }
+    }
+    
+    func presentContactAddScreen(from view: ContactListViewProtocol?, forContact contact: Contact, andDelegate delegate: ContactEditDelegate?) {
+        let addVc = ContactDetailsRouter.createEditScreenModule(contact: contact, saveType: .new, andDelegate: delegate)
+        if let view = view as? UIViewController {
+            view.navigationController?.present(addVc, animated: true, completion: nil)
         }
     }
     
