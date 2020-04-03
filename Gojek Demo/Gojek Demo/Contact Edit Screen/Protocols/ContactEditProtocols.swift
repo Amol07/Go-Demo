@@ -6,7 +6,7 @@
 //  Copyright © 2020 Amol Prakash. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol ContactEditViewProtocol: AnyObject {
     var presenter: ContactEditPresenterProtocol? { get set }
@@ -14,6 +14,7 @@ protocol ContactEditViewProtocol: AnyObject {
     
     func setTitle(_ title: String)
     func contactSavedSuccessfully()
+    func selectedImage(_ image: UIImage)
     func showError(_ error: CustomError?)
     func showLoading()
     func hideLoading()
@@ -38,6 +39,7 @@ protocol ContactEditPresenterProtocol: AnyObject {
     var email: String? { get }
     var firstName: String? { get }
     var lastName: String? { get }
+    var profilePicUrlString: String? { get }
     
     var contactSaveType: ContactSaveType { get set }
     
@@ -45,6 +47,7 @@ protocol ContactEditPresenterProtocol: AnyObject {
     func viewDidLoad()
     func saveContact()
     func editingChanged(in inputType: UpdateInputType, with text: String)
+    func photoSelector()
 }
 
 protocol ContactEditInteractorOutputProtocol: AnyObject {

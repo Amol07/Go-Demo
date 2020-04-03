@@ -11,11 +11,16 @@ import UIKit
 class ContactEditViewController: UIViewController {
     
     @IBOutlet private weak var gradientView: UIView!
-    @IBOutlet private weak var userImageView: UIImageView! {
+    @IBOutlet private weak var userImageView: AyncImageView! {
         didSet {
             self.userImageView.layer.cornerRadius = self.userImageView.frame.width/2
             self.userImageView.layer.borderColor = UIColor.white.cgColor
             self.userImageView.layer.borderWidth = 2
+            if let profileUrlString = self.presenter?.profilePicUrlString {
+                self.userImageView.loadAsyncFrom(urlString: "\(EnvironmentURL.baseUrl)\(profileUrlString)", placeholder: #imageLiteral(resourceName: "placeholder_photo"))
+            } else {
+                self.userImageView.image = #imageLiteral(resourceName: "placeholder_photo")
+            }
         }
     }
     
@@ -69,6 +74,7 @@ class ContactEditViewController: UIViewController {
     
     @IBAction func changePhoto(_ sender: Any) {
         self.view.endEditing(true)
+        self.presenter?.photoSelector()
     }
     
     @IBAction func editingChnaged(_ sender: UITextField) {

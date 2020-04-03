@@ -6,7 +6,7 @@
 //  Copyright © 2020 Amol Prakash. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum UpdateInputType {
     case photo
@@ -26,6 +26,8 @@ class ContactEditPresenter: ContactEditPresenterProtocol {
     weak var view: ContactEditViewProtocol?
     var interactor: ContactEditInteractorInputProtocol?
     private weak var delegate: ContactEditDelegate?
+    private var imagePicker: ImagePicker?
+    
     var contactSaveType: ContactSaveType
     
     var phoneNumber: String? {
@@ -44,6 +46,10 @@ class ContactEditPresenter: ContactEditPresenterProtocol {
         return self.interactor?.contact.lastName
     }
     
+    var profilePicUrlString: String? {
+        return self.interactor?.contact.profilePicUrlString
+    }
+    
     init(type: ContactSaveType, delegate: ContactEditDelegate?) {
         self.contactSaveType = type
         self.delegate = delegate
@@ -51,6 +57,9 @@ class ContactEditPresenter: ContactEditPresenterProtocol {
     
     func viewDidLoad() {
         self.contactSaveType == .existing ? self.view?.setTitle("Edit Contact") : self.view?.setTitle("Add Contact")
+        if let view = self.view as? ContactEditViewController {
+            self.imagePicker = ImagePicker(presentationController: view, delegate: self)
+        }
     }
     
     func editingChanged(in inputType: UpdateInputType, with text: String) {
@@ -73,6 +82,10 @@ class ContactEditPresenter: ContactEditPresenterProtocol {
     
     func saveContact() {
         self.checkValidationsAndSaveContact()
+    }
+    
+    func photoSelector() {
+        self.imagePicker?.present(from: nil)
     }
     
     private func checkValidationsAndSaveContact() {
@@ -106,6 +119,14 @@ class ContactEditPresenter: ContactEditPresenterProtocol {
     
     deinit {
         print("deinit \(String(describing: self))")
+    }
+}
+
+extension ContactEditPresenter: ImagePickerDelegate {
+    
+    func didSelect(image: UIImage) {
+        self.view?.selectedImage(image)
+        self.interactor?.tempContact.imageData = image.pngData()
     }
 }
 

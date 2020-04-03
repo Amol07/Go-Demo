@@ -474,7 +474,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RO7-EU-9ib">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_photo" translatesAutoresizingMaskIntoConstraints="NO" id="GcI-Fv-aQE">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_photo" translatesAutoresizingMaskIntoConstraints="NO" id="GcI-Fv-aQE" customClass="AyncImageView" customModule="Gojek_Demo" customModuleProvider="target">
                                                                 <rect key="frame" x="144" y="40" width="126" height="126"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="126" id="5Sn-Q4-NJ3"/>

@@ -40,6 +40,7 @@
 		3C088EE92436B90000586B7D /* ContactEditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EE82436B90000586B7D /* ContactEditInteractor.swift */; };
 		3C088EEB2436B91900586B7D /* ContactEditRemoteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EEA2436B91900586B7D /* ContactEditRemoteDataFetcher.swift */; };
 		3C088EED2436B93600586B7D /* ContactEditProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EEC2436B93600586B7D /* ContactEditProtocols.swift */; };
+		3C088EF02437D65100586B7D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EEF2437D65100586B7D /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		3C088EE82436B90000586B7D /* ContactEditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditInteractor.swift; sourceTree = "<group>"; };
 		3C088EEA2436B91900586B7D /* ContactEditRemoteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditRemoteDataFetcher.swift; sourceTree = "<group>"; };
 		3C088EEC2436B93600586B7D /* ContactEditProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditProtocols.swift; sourceTree = "<group>"; };
+		3C088EEF2437D65100586B7D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		3C088E9F2435516700586B7D /* Reusable Components */ = {
 			isa = PBXGroup;
 			children = (
+				3C088EEE2437D64300586B7D /* ImagePicker */,
 				3C088EC7243582A500586B7D /* AsyncImageView */,
 				3C088EA8243552C500586B7D /* Extensions */,
 				3C088EA12435518100586B7D /* Custom Error */,
@@ -411,6 +414,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3C088EEE2437D64300586B7D /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EEF2437D65100586B7D /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -559,6 +570,7 @@
 				3C088EEB2436B91900586B7D /* ContactEditRemoteDataFetcher.swift in Sources */,
 				3C088ED224368BDA00586B7D /* ContactDetailsInteractor.swift in Sources */,
 				3C088EBD2435635900586B7D /* ContactListRouter.swift in Sources */,
+				3C088EF02437D65100586B7D /* ImagePicker.swift in Sources */,
 				3C088EE52436B8C100586B7D /* ContactEditViewController.swift in Sources */,
 				3C088EA52435520C00586B7D /* APIClient.swift in Sources */,
 				3C088EAA243552D700586B7D /* UIView+Ext.swift in Sources */,
