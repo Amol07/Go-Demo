@@ -12,7 +12,6 @@
 		3C088E772435509300586B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C088E752435509300586B7D /* Main.storyboard */; };
 		3C088E792435509800586B7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C088E782435509800586B7D /* Assets.xcassets */; };
 		3C088E7C2435509800586B7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C088E7A2435509800586B7D /* LaunchScreen.storyboard */; };
-		3C088E872435509800586B7D /* Gojek_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088E862435509800586B7D /* Gojek_DemoTests.swift */; };
 		3C088E922435509900586B7D /* Gojek_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088E912435509900586B7D /* Gojek_DemoUITests.swift */; };
 		3C088EA3243551D100586B7D /* Reachablity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EA2243551D100586B7D /* Reachablity.swift */; };
 		3C088EA52435520C00586B7D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EA42435520C00586B7D /* APIClient.swift */; };
@@ -41,6 +40,9 @@
 		3C088EEB2436B91900586B7D /* ContactEditRemoteDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EEA2436B91900586B7D /* ContactEditRemoteDataFetcher.swift */; };
 		3C088EED2436B93600586B7D /* ContactEditProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EEC2436B93600586B7D /* ContactEditProtocols.swift */; };
 		3C088EF02437D65100586B7D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EEF2437D65100586B7D /* ImagePicker.swift */; };
+		3C088EF32437E5C600586B7D /* ContactListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C088EF22437E5C600586B7D /* ContactListPresenterTests.swift */; };
+		3C6264E8243952EA00DB6FB6 /* ContactListMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6264E7243952EA00DB6FB6 /* ContactListMock.swift */; };
+		3CB26630243950FF00E0A376 /* ContactListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB2662F243950FF00E0A376 /* ContactListInteractorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +71,6 @@
 		3C088E7B2435509800586B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C088E7D2435509800586B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C088E822435509800586B7D /* Gojek DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gojek DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C088E862435509800586B7D /* Gojek_DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gojek_DemoTests.swift; sourceTree = "<group>"; };
 		3C088E882435509800586B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C088E8D2435509900586B7D /* Gojek DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gojek DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C088E912435509900586B7D /* Gojek_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gojek_DemoUITests.swift; sourceTree = "<group>"; };
@@ -101,6 +102,9 @@
 		3C088EEA2436B91900586B7D /* ContactEditRemoteDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditRemoteDataFetcher.swift; sourceTree = "<group>"; };
 		3C088EEC2436B93600586B7D /* ContactEditProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditProtocols.swift; sourceTree = "<group>"; };
 		3C088EEF2437D65100586B7D /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		3C088EF22437E5C600586B7D /* ContactListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListPresenterTests.swift; sourceTree = "<group>"; };
+		3C6264E7243952EA00DB6FB6 /* ContactListMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListMock.swift; sourceTree = "<group>"; };
+		3CB2662F243950FF00E0A376 /* ContactListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListInteractorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +172,8 @@
 		3C088E852435509800586B7D /* Gojek DemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				3C088E862435509800586B7D /* Gojek_DemoTests.swift */,
+				3C6264E6243952A500DB6FB6 /* Mock */,
+				3C088EF12437E0BC00586B7D /* Contact List Tests */,
 				3C088E882435509800586B7D /* Info.plist */,
 			);
 			path = "Gojek DemoTests";
@@ -422,6 +427,23 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
+		3C088EF12437E0BC00586B7D /* Contact List Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3C088EF22437E5C600586B7D /* ContactListPresenterTests.swift */,
+				3CB2662F243950FF00E0A376 /* ContactListInteractorTests.swift */,
+			);
+			path = "Contact List Tests";
+			sourceTree = "<group>";
+		};
+		3C6264E6243952A500DB6FB6 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				3C6264E7243952EA00DB6FB6 /* ContactListMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -589,7 +611,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C088E872435509800586B7D /* Gojek_DemoTests.swift in Sources */,
+				3CB26630243950FF00E0A376 /* ContactListInteractorTests.swift in Sources */,
+				3C088EF32437E5C600586B7D /* ContactListPresenterTests.swift in Sources */,
+				3C6264E8243952EA00DB6FB6 /* ContactListMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

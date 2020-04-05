@@ -24,19 +24,11 @@ class ContactListPresenter: ContactListPresenterProtocol {
     }
     
     func numberOfRows(inSection section: Int) -> Int {
-        if self.isGroupedList {
-            return self.groupedContacts[section].count
-        } else {
-            return self.contacts.count
-        }
+        return self.isGroupedList ? self.groupedContacts[section].count: self.contacts.count
     }
     
     func numberOfSection() -> Int {
-        if self.isGroupedList {
-            return self.groupedContacts.count
-        } else {
-            return 1
-        }
+        return self.isGroupedList ? self.groupedContacts.count : 1
     }
     
     func sectionIndexTitles() -> [String] {
@@ -44,19 +36,11 @@ class ContactListPresenter: ContactListPresenterProtocol {
     }
     
     func titleForHeader(in section: Int) -> String {
-        if self.isGroupedList {
-            return String(self.groupedContacts[section].first?.firstName.prefix(1) ?? "")
-        } else {
-            return ""
-        }
+        return self.isGroupedList ? self.letterIndexArray[section] : ""
     }
     
     func contactAt(indexPath: IndexPath) -> Contact {
-        if self.isGroupedList {
-            return self.groupedContacts[indexPath.section][indexPath.row]
-        } else {
-            return self.contacts[indexPath.row]
-        }
+        return self.isGroupedList ? self.groupedContacts[indexPath.section][indexPath.row] : self.contacts[indexPath.row]
     }
     
     func selectedRowAt(indexPath: IndexPath) {
@@ -78,6 +62,8 @@ extension ContactListPresenter: ContactListInteractorOutputProtocol {
         self.contacts = contacts.sorted { $0.firstName < $1.firstName }
         if self.isGroupedList {
             self.groupedContacts = self.createGroupedContactList(self.contacts)
+        } else {
+            self.letterIndexArray.removeAll()
         }
         self.view?.hideLoading()
         self.view?.loadComplete()
@@ -115,19 +101,12 @@ extension ContactListPresenter: ContactDetailsDelegate {
 
 extension ContactListPresenter {
     
-    func createGroupedContactList(_ contacts: [Contact]) -> [[Contact]] {
-        let groupContactArray = contacts.reduce([[Contact]]()) {
-            guard var last = $0.last else { return [[$1]] }
-            var collection = $0
-            if last.first!.firstName.prefix(1) == $1.firstName.prefix(1) {
-                last += [$1]
-                collection[collection.count - 1] = last
-            } else {
-                self.letterIndexArray.append(String([$1].first?.firstName.prefix(1) ?? "Z"))
-                collection += [[$1]]
-            }
-            return collection
+    private func createGroupedContactList(_ contacts: [Contact]) -> [[Contact]] {
+        let groupedDictionary = Dictionary(grouping: contacts, by: { !($0.firstName.isEmpty || Int($0.firstName.prefix(1)) != nil) ? String($0.firstName.prefix(1)) : "#"})
+        self.letterIndexArray = groupedDictionary.keys.sorted()
+        return groupedDictionary.values.sorted { contacts1, contacts2 -> Bool in
+            guard let firstName1 = contacts1.first?.firstName, let firstName2 = contacts2.first?.firstName else { return false }
+            return firstName1 < firstName2
         }
-        return groupContactArray
     }
 }

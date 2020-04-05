@@ -17,7 +17,7 @@ class ContactEditInteractor: ContactEditInteractorInputProtocol {
     var contact: Contact
     var tempContact: Contact
     
-    init(contact: Contact) {
+    required init(contact: Contact) {
         self.contact = contact
         self.tempContact = contact.copy() as? Contact ?? Contact()
     }

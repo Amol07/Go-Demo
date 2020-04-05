@@ -62,6 +62,7 @@ protocol ContactEditInteractorInputProtocol: AnyObject {
     var contact: Contact { get set }
     var tempContact: Contact { get set }
     // PRESENTER -> INTERACTOR
+    init(contact: Contact)
     func saveContact(type: ContactSaveType)
 }
 
