@@ -23,9 +23,9 @@ class ContactDetailsViewController: UIViewController {
         didSet {
             self.actionButtons.forEach { button in
                 button.layer.cornerRadius = button.frame.height/2
-                button.layer.borderColor = UIColor.clear.cgColor
+                button.layer.borderColor = UIColor.white.cgColor
                 button.layer.borderWidth = 0.5
-
+                button.isAccessibilityElement = true
             }
         }
     }

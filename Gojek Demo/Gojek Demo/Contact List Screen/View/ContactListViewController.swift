@@ -27,6 +27,9 @@ class ContactsListViewController: UIViewController {
         self.presenter?.viewDidLoad()
         self.tableView.tableFooterView = UIView()
         self.tableView.addSubview(self.refreshControl)
+        
+        self.tableView.isAccessibilityElement = true
+        self.tableView.accessibilityIdentifier = "ContactListTableView"
     }
     
     @IBAction func addContact(_ sender: Any) {

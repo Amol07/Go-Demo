@@ -29,6 +29,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3C088E812435509800586B7D"
+               BuildableName = "Gojek DemoTests.xctest"
+               BlueprintName = "Gojek DemoTests"
+               ReferencedContainer = "container:Gojek Demo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3C088E8C2435509900586B7D"
+               BuildableName = "Gojek DemoUITests.xctest"
+               BlueprintName = "Gojek DemoUITests"
+               ReferencedContainer = "container:Gojek Demo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

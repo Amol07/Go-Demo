@@ -27,21 +27,29 @@ class ContactEditViewController: UIViewController {
     @IBOutlet private weak var firstNameTextField: UITextField! {
         didSet {
             self.firstNameTextField.text = self.presenter?.firstName
+            self.firstNameTextField.isAccessibilityElement = true
+            self.firstNameTextField.accessibilityIdentifier = "First Name"
         }
     }
     @IBOutlet private weak var lastNameTextField: UITextField! {
         didSet {
             self.lastNameTextField.text = self.presenter?.lastName
+            self.lastNameTextField.isAccessibilityElement = true
+            self.lastNameTextField.accessibilityIdentifier = "Last Name"
         }
     }
     @IBOutlet private weak var phoneNoTextField: UITextField! {
         didSet {
             self.phoneNoTextField.text = self.presenter?.phoneNumber
+            self.phoneNoTextField.isAccessibilityElement = true
+            self.phoneNoTextField.accessibilityIdentifier = "Phone Number"
         }
     }
     @IBOutlet private weak var emailTextField: UITextField! {
         didSet {
             self.emailTextField.text = self.presenter?.email
+            self.emailTextField.isAccessibilityElement = true
+            self.emailTextField.accessibilityIdentifier = "Email Id"
         }
     }
     

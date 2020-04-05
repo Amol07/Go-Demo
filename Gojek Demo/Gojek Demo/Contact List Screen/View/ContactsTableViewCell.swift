@@ -20,6 +20,9 @@ class ContactsTableViewCell: UITableViewCell, ReusableView {
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width/2
         self.profileImageView.layer.borderColor = UIColor.lightGray.cgColor
         self.profileImageView.layer.borderWidth = 0.5
+        
+        self.isAccessibilityElement = true
+        self.accessibilityIdentifier = "ContactsTableViewCell"
     }
     
     func configure(contact: Contact) {

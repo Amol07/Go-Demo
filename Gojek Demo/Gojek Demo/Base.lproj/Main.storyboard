@@ -171,7 +171,8 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="81.5" height="72"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ft-D0-PUf">
-                                                                                <rect key="frame" x="19" y="0.0" width="44" height="44"/>
+                                                                                <rect key="frame" x="18.5" y="0.0" width="45" height="44"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="MessageButton"/>
                                                                                 <state key="normal" image="message_button"/>
                                                                                 <connections>
                                                                                     <action selector="sendMessage:" destination="wmb-ju-eA6" eventType="touchUpInside" id="NKL-UJ-fsc"/>
@@ -198,6 +199,7 @@
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYg-z1-QCa">
                                                                                 <rect key="frame" x="18.5" y="0.0" width="45" height="44"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="CallButton"/>
                                                                                 <state key="normal" image="call_button"/>
                                                                                 <connections>
                                                                                     <action selector="call:" destination="wmb-ju-eA6" eventType="touchUpInside" id="iio-k9-0FP"/>
@@ -224,6 +226,7 @@
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ri-TP-unO">
                                                                                 <rect key="frame" x="18.5" y="0.0" width="45" height="44"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="MailButton"/>
                                                                                 <state key="normal" image="email_button"/>
                                                                                 <connections>
                                                                                     <action selector="sendEmail:" destination="wmb-ju-eA6" eventType="touchUpInside" id="33F-Lo-vIG"/>
@@ -249,7 +252,8 @@
                                                                         <rect key="frame" x="244.5" y="0.0" width="81.5" height="72"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCs-39-cQg">
-                                                                                <rect key="frame" x="19" y="0.0" width="44" height="44"/>
+                                                                                <rect key="frame" x="18.5" y="0.0" width="45" height="44"/>
+                                                                                <accessibility key="accessibilityConfiguration" identifier="FavouriteButton"/>
                                                                                 <state key="normal" image="favourite_button"/>
                                                                                 <connections>
                                                                                     <action selector="markFavourite:" destination="wmb-ju-eA6" eventType="touchUpInside" id="exI-c6-Nof"/>
@@ -273,6 +277,14 @@
                                                                     </view>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="iCs-39-cQg" firstAttribute="width" secondItem="9ft-D0-PUf" secondAttribute="width" id="1Ms-pQ-sla"/>
+                                                                    <constraint firstItem="iCs-39-cQg" firstAttribute="height" secondItem="9ft-D0-PUf" secondAttribute="height" id="C1w-Ay-Pqt"/>
+                                                                    <constraint firstItem="QYg-z1-QCa" firstAttribute="width" secondItem="9ft-D0-PUf" secondAttribute="width" id="PBY-Xq-l0V"/>
+                                                                    <constraint firstItem="QYg-z1-QCa" firstAttribute="height" secondItem="9ft-D0-PUf" secondAttribute="height" id="QTx-GA-lVh"/>
+                                                                    <constraint firstItem="0Ri-TP-unO" firstAttribute="width" secondItem="9ft-D0-PUf" secondAttribute="width" id="fDW-Ee-psD"/>
+                                                                    <constraint firstItem="0Ri-TP-unO" firstAttribute="height" secondItem="9ft-D0-PUf" secondAttribute="height" id="pbP-xr-pDa"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -457,7 +469,7 @@
         <!--Edit Contact-->
         <scene sceneID="Icj-cc-Nd5">
             <objects>
-                <viewController storyboardIdentifier="ContactEditViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bfZ-W3-9xg" customClass="ContactEditViewController" customModule="Gojek_Contacts_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactEditViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bfZ-W3-9xg" customClass="ContactEditViewController" customModule="Gojek_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="POw-7H-JTg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
